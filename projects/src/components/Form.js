@@ -15,7 +15,7 @@ const [error, setError] = useState('');
 
 
 const validateEmail = (email) => {
-  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}$/i;
+  const emailRegex = /^[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]{2,}$/i;
   if (!emailRegex.test(email)) {
     setError('Please enter a valid email address.');
     
@@ -59,7 +59,7 @@ const handleNameChange = (e)=>{
 
 const submitData =(event)=>{
 
-const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}$/i;
+const emailRegex = /^[A-Za-z0-9]+@[A-Za-z]+\.[A-Z]{2,}$/i;
 
  event.preventDefault();
 
@@ -155,11 +155,8 @@ return (
       <label htmlFor="exampleEmail1" className="form-label">Email</label>
       <input type="email" className={`form-control ${error ? 'error-input' : ''}`}  id="exampleEmail1" value={email} onChange={handleEmailChange}
       />
-      {error && <div className="error-message">{error}</div>}
-      <br />
+  {<div className="error-message">{error}</div>}
 
-      
-      
     </div>
     <div className="mb-3">
     <label htmlFor="examplePassword1" className="form-label">Password</label>
@@ -175,12 +172,12 @@ return (
         className="password-toggle"
         onClick={togglePasswordVisibility}
       >
-      <img 
+      {/* <img 
       src="/images/eye1.png"
           
       alt={passwordVisible ? 'Hide password' : 'Show password'}
       className="eye-icon"
-        />
+        /> */}
       </button>
 </div>
 
